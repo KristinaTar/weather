@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import {Form} from "react-bootstrap"
+import {setNewTemperature} from "./reducer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(props) {
+
+    return <div className="App" style={{background: props.color}} >
+        <div style={{textAlign:'center'}}>
+
+        <img src={props.icon} /> <br/>
+        {(props.temp>0)? '+'+Math.round(props.temp):Math.round(props.temp)}
+
+        <br/>
+        -10
+        <Form.Range style={{maxWidth:'60%', width:'300px', margin:'5px'}}
+            value={2.5*props.temp+25}
+                    onChange={(e)=>{props.setNewTemperature((e.target.value-25)/2.5)}}
+        />
+        +30 <br/>
+            <div>{props.city}</div>
+
+
     </div>
-  );
-}
+    </div>
 
+
+}
 export default App;
