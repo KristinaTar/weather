@@ -1,14 +1,14 @@
 import './App.css';
 import React from 'react'
 import {Form} from "react-bootstrap"
-import {setNewTemperature} from "./reducer";
+
 
 function App(props) {
 
     return <div className="App" style={{background: props.color}} >
         <div style={{textAlign:'center'}}>
 
-        <img src={props.icon} /> <br/>
+        <img src={props.icon} alt="Weather icon" /> <br/>
         {(props.temp>0)? '+'+Math.round(props.temp):Math.round(props.temp)}
 
         <br/>
