@@ -44,7 +44,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
-    "homepage": "https://kristinatar.github.io/weather/"
-  }
+    "gh-pages": "^3.2.3"
+  },
+  "homepage": "https://kristinatar.github.io/weather/"
 }
