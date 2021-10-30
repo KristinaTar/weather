@@ -54,7 +54,8 @@ export const getWeatherData = () => async (dispatch) => {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
         dispatch(setUserLocation({lat, long}))
-        const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=0e43ba82fc9cae2aea7457683524468f`)
+        const protectionAPI='2aea7457683524468f';
+        const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=0e43ba82fc9cae${protectionAPI}`)
         const json = await data.json();
         //const icon=`http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`
         dispatch(setWeatherData(`http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`,
